@@ -1,10 +1,11 @@
 import React from "react";
 import MapComponent from "./Map";
+import Home from "./Home"; // Import Home.js
 
 function App() {
   return (
     <div>
-      <h1>TripSync</h1>
+      <Home /> {/* Display Home Page */}
       <MapComponent />
     </div>
   );
