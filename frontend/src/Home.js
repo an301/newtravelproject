@@ -1,14 +1,13 @@
 import React from "react";
 import "./Home.css";
 
-const Home = () => {
+const Home = ({ scrollToTripPlanner }) => {
   return (
     <div className="home-container">
       {/* Title */}
       <h1 className="title">TripSync</h1>
-      <button className="account-button">
-        👤
-    </button>
+      <button className="account-button">👤</button>
+
       {/* Main Content Section */}
       <div className="content">
         {/* Past Trips */}
@@ -31,7 +30,9 @@ const Home = () => {
       </div>
 
       {/* Add Trip Button */}
-      <button className="add-trip">+ Add Trip</button>
+      <button className="add-trip" onClick={scrollToTripPlanner}>
+        + Add Trip
+      </button>
     </div>
   );
 };

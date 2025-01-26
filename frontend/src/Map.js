@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const HERE_API_KEY = "v5iH85vmMKhZOP8KkEtw7Kg8DKuBlxvhNkCpfoe_f4A"; // Your HERE API Key
+const HERE_API_KEY = "v5iH85vmMKhZOP8KkEtw7Kg8DKuBlxvhNkCpfoe_f4A";
 
 const loadHereMaps = () => {
   return new Promise((resolve, reject) => {
@@ -44,9 +44,8 @@ const loadHereMaps = () => {
   });
 };
 
-const MapComponent = () => {
+const MapComponent = ({ location }) => {
   const mapRef = useRef(null);
-  const [location, setLocation] = useState("");
   const [mapInstance, setMapInstance] = useState(null);
   const [platform, setPlatform] = useState(null);
 
@@ -64,7 +63,6 @@ const MapComponent = () => {
 
         if (!platform || !mapRef.current) return;
 
-        // Remove existing map before creating a new one
         if (mapInstance) {
           mapInstance.dispose();
         }
@@ -90,12 +88,12 @@ const MapComponent = () => {
 
     return () => {
       if (mapInstance) {
-        mapInstance.dispose(); // Cleanup old map
+        mapInstance.dispose();
       }
     };
   }, [platform]);
 
-  const handleSearch = async () => {
+  useEffect(() => {
     if (!location || !mapInstance || !platform) return;
 
     const geocoder = platform.getSearchService();
@@ -109,7 +107,7 @@ const MapComponent = () => {
           mapInstance.setCenter(newCenter);
           mapInstance.setZoom(14);
 
-          mapInstance.removeObjects(mapInstance.getObjects()); // Remove old markers
+          mapInstance.removeObjects(mapInstance.getObjects());
 
           const marker = new window.H.map.Marker(newCenter);
           mapInstance.addObject(marker);
@@ -122,22 +120,15 @@ const MapComponent = () => {
         alert("Error in geocoding");
       }
     );
-  };
+  }, [location]);
 
   return (
     <div>
-      <input
-        type="text"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        placeholder="Enter location"
-      />
-      <button onClick={handleSearch}>Search</button>
       <div
         ref={mapRef}
         style={{
-          width: "500px",
-          height: "500px",
+          width: "700px",
+          height: "700px",
           marginTop: "10px",
           borderRadius: "10px",
           border: "2px solid #ccc",

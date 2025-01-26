@@ -1,14 +1,22 @@
-import React from "react";
-import MapComponent from "./Map";
-import Home from "./Home"; // Import Home.js
+import React, { useRef } from "react";
+import Home from "./Home";
+import TripPlanner from "./TripPlanner";
 
-function App() {
+const App = () => {
+  const tripPlannerRef = useRef(null);
+
+  const scrollToTripPlanner = () => {
+    tripPlannerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div>
-      <Home /> {/* Display Home Page */}
-      <MapComponent />
+      <Home scrollToTripPlanner={scrollToTripPlanner} />
+      <div ref={tripPlannerRef}>
+        <TripPlanner />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
