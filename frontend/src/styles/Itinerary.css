@@ -1,0 +1,64 @@
+/* Itinerary Display Container */
+.itinerary-display {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 700px;
+    color: black;
+}
+
+/* Each Day Box */
+.itinerary-day {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #007bff;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.itinerary-day:hover {
+    transform: scale(1.02);
+    background: #e0f2ff;
+}
+
+/* Collapsible Activities List */
+.itinerary-activities {
+    list-style: none;
+    padding: 10px;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.itinerary-activities li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.itinerary-activities li:last-child {
+    border-bottom: none;
+}
+
+/* Activity Details */
+.activity-time {
+    font-weight: bold;
+    color: #007bff;
+    flex: 1;
+}
+
+.activity-name {
+    flex: 3;
+}
+
+.activity-price {
+    font-weight: bold;
+    color: #28a745;
+}
