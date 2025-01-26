@@ -127,8 +127,8 @@ const MapComponent = ({ location }) => {
       <div
         ref={mapRef}
         style={{
-          width: "700px",
-          height: "700px",
+          width: "650px",
+          height: "650px",
           marginTop: "10px",
           borderRadius: "10px",
           border: "2px solid #ccc",

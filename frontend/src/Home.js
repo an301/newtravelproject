@@ -6,7 +6,13 @@ const Home = ({ scrollToTripPlanner }) => {
     <div className="home-container">
       {/* Title */}
       <h1 className="title">TripSync</h1>
-      <button className="account-button">👤</button>
+      <button className="account-button">
+        <img
+          src="/images/account-icon.png"
+          alt="Account"
+          className="account-icon"
+        />
+      </button>
 
       {/* Main Content Section */}
       <div className="content">
