@@ -1,0 +1,35 @@
+.map-container {
+    width: 400px; /* Square width */
+    height: 400px; /* Square height */
+    margin-top: 10px;
+    border: 2px solid #ccc; /* Optional: Adds a border */
+    border-radius: 10px; /* Optional: Rounds corners */
+    overflow: hidden;
+  }
+  
+  .map-search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .map-search-container input {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    width: 250px;
+  }
+  
+  .map-search-container button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .map-search-container button:hover {
+    background-color: #0056b3;
+  }
+  
